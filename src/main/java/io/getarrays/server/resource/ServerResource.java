@@ -32,7 +32,7 @@ public class ServerResource {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
-                        .date(Map.of("server", serverService.list(30)))
+                        .data(Map.of("server", serverService.list(30)))
                         .message("Server retrieved")
                         .status(OK)
                         .statusCode(OK.value())
@@ -46,7 +46,7 @@ public class ServerResource {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
-                        .date(Map.of("server", server))
+                        .data(Map.of("server", server))
                         .message(server.getStatus() == SERVER_UP ? "Ping success" : "Ping failed")
                         .status(OK)
                         .statusCode(OK.value())
@@ -58,7 +58,7 @@ public class ServerResource {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
-                        .date(Map.of("server", serverService.create(server)))
+                        .data(Map.of("server", serverService.create(server)))
                         .message("Server create")
                         .status(CREATED)
                         .statusCode(CREATED.value())
@@ -70,7 +70,7 @@ public class ServerResource {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
-                        .date(Map.of("server", serverService.get(id)))
+                        .data(Map.of("server", serverService.get(id)))
                         .message("Server retrieved")
                         .status(OK)
                         .statusCode(OK.value())
@@ -82,7 +82,7 @@ public class ServerResource {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
-                        .date(Map.of("delete", serverService.delete(id)))
+                        .data(Map.of("delete", serverService.delete(id)))
                         .message("Server deleted")
                         .status(OK)
                         .statusCode(OK.value())
